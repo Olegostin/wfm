@@ -3,6 +3,7 @@
 import {
   ArrowRight,
   BarChart3,
+  Bitcoin,
   BrainCircuit,
   Building2,
   CalendarCheck2,
@@ -123,6 +124,33 @@ const faqs = [
   ["Как сотрудники работают с графиком?", "Через адаптивный web-кабинет: смотрят смены, задают предпочтения, подают заявки и обмениваются сменами."],
 ];
 
+const pricingPlans = [
+  {
+    name: "Start",
+    description: "Для небольших команд, которые переходят от таблиц к системному планированию.",
+    price: "999",
+    employees: "до 100 сотрудников",
+    featured: false,
+    features: ["Прогноз нагрузки", "Автоматические графики", "Личный кабинет сотрудника", "Базовая аналитика", "Поддержка по email"],
+  },
+  {
+    name: "Business",
+    description: "Для растущих контакт-центров, ритейла и распределённых сервисных команд.",
+    price: "1499",
+    employees: "до 500 сотрудников",
+    featured: true,
+    features: ["Все возможности Start", "Аналитика в реальном времени", "Интеграции с ERP, HCM и BI", "Управление навыками и очередями", "Приоритетная поддержка"],
+  },
+  {
+    name: "Enterprise",
+    description: "Для крупных компаний со сложной структурой, требованиями к SLA и безопасности.",
+    price: "1999",
+    employees: "без ограничений",
+    featured: false,
+    features: ["Все возможности Business", "On-premise или private cloud", "SSO и расширенные роли", "Персональные интеграции", "Выделенная команда и SLA"],
+  },
+] as const;
+
 function Dashboard() {
   const bars = [46, 62, 54, 77, 71, 88, 64, 79, 68, 84, 73, 91, 76, 86];
   return (
@@ -198,6 +226,7 @@ export default function Home() {
             <a href="#features" onClick={() => setMenuOpen(false)}>Возможности</a>
             <a href="#industries" onClick={() => setMenuOpen(false)}>Для отраслей</a>
             <a href="#results" onClick={() => setMenuOpen(false)}>Эффекты</a>
+            <a href="#pricing" onClick={() => setMenuOpen(false)}>Тарифы</a>
             <a href="#faq" onClick={() => setMenuOpen(false)}>FAQ</a>
             <a href="#demo" className="nav-mobile-cta" onClick={() => setMenuOpen(false)}>Получить демо</a>
           </nav>
@@ -379,6 +408,42 @@ export default function Home() {
             {["ERP", "HCM", "BI", "CRM", "POS", "API"].map((item, i) => <span style={{ "--i": i } as React.CSSProperties} key={item}>{item}</span>)}
             <div className="integration-core"><Building2 size={24} /><b>WFM</b></div>
           </div>
+        </div>
+      </section>
+
+      <section className="pricing section-pad" id="pricing">
+        <div className="container">
+          <div className="section-heading centered">
+            <div className="section-kicker">ТАРИФЫ</div>
+            <h2>Выберите масштаб решения</h2>
+            <p>Начните с подходящего тарифа и расширяйте платформу вместе с ростом команды.</p>
+          </div>
+          <div className="pricing-grid">
+            {pricingPlans.map((plan) => (
+              <article className={plan.featured ? "pricing-card featured" : "pricing-card"} key={plan.name}>
+                {plan.featured && <div className="popular-badge">ПОПУЛЯРНЫЙ</div>}
+                <div className="pricing-top">
+                  <div className="pricing-name"><span>{plan.name.slice(0, 1)}</span><h3>{plan.name}</h3></div>
+                  <p>{plan.description}</p>
+                </div>
+                <div className="pricing-price"><sup>$</sup><strong>{plan.price}</strong><span>/ месяц</span></div>
+                <div className="pricing-employees"><UsersRound size={16} />{plan.employees}</div>
+                <ul>
+                  {plan.features.map((feature) => <li key={feature}><span><Check size={13} /></span>{feature}</li>)}
+                </ul>
+                <a className={plan.featured ? "button button-orange pricing-button" : "button pricing-button"} href="#demo">Получить КП <ArrowRight size={17} /></a>
+                <div className="payment-row">
+                  <small>СПОСОБЫ ОПЛАТЫ</small>
+                  <div className="payment-methods" aria-label="Криптовалюта, Visa и MasterCard">
+                    <span className="payment-crypto" title="Криптовалюта"><Bitcoin size={18} /></span>
+                    <span className="payment-visa" title="Visa">VISA</span>
+                    <span className="payment-mastercard" title="MasterCard"><i /><i /></span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <p className="pricing-note">Цены указаны без учёта индивидуальных интеграций. Итоговое предложение зависит от конфигурации и числа пользователей.</p>
         </div>
       </section>
 
