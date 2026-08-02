@@ -8,6 +8,8 @@
   --soft: #f5f5f3;
   --dark: #16181d;
   --container: 1180px;
+  --font-body: "Roboto Variable", Roboto, Arial, sans-serif;
+  --font-display: "Roboto Variable", Roboto, Arial, sans-serif;
 }
 
 * {
@@ -22,14 +24,24 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--paper);
-  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
 
-body,
 button,
 input {
   font: inherit;
+}
+
+h1,
+h2,
+h3,
+.logo-text,
+.button,
+.proof-grid strong,
+.industry-stat strong,
+.result-card strong {
+  font-family: var(--font-display);
 }
 
 a {
@@ -283,9 +295,9 @@ button {
 .hero h1 {
   margin: 27px 0 25px;
   font-size: clamp(53px, 5.35vw, 77px);
-  font-weight: 720;
+  font-weight: 680;
   line-height: 0.99;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
 }
 
 .hero h1 em {
@@ -497,9 +509,9 @@ button {
 .integration-inner h2 {
   margin: 19px 0 0;
   font-size: clamp(38px, 4.15vw, 57px);
-  font-weight: 710;
+  font-weight: 680;
   line-height: 1.06;
-  letter-spacing: -.052em;
+  letter-spacing: -.035em;
 }
 
 .intro-copy p {
@@ -529,9 +541,28 @@ button {
 .feature-card:hover { border-color: rgba(255,107,26,.42); box-shadow: 0 20px 50px rgba(29,31,36,.08); transform: translateY(-5px); }
 .feature-number { position: absolute; top: 26px; right: 27px; color: #dedfe1; font-size: 12px; font-weight: 800; }
 .feature-icon { display: grid; width: 50px; height: 50px; place-items: center; border-radius: 8px; color: var(--orange); background: #fff0e8; }
-.feature-card h3 { margin: 28px 0 13px; font-size: 20px; letter-spacing: -.025em; }
-.feature-card p { margin: 0; color: #70747d; font-size: 14px; line-height: 1.65; }
-.feature-link { position: absolute; bottom: 27px; display: inline-flex; align-items: center; gap: 7px; color: #363940; font-size: 12px; font-weight: 750; opacity: 0; transition: opacity 180ms ease; }
+.feature-card h3 { margin: 28px 0 13px; font-size: 20px; letter-spacing: -.012em; }
+.feature-card p {
+  margin: 0;
+  color: #515660;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 430;
+  line-height: 1.65;
+}
+.feature-link {
+  position: absolute;
+  bottom: 27px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #363940;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 650;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
 .feature-card:hover .feature-link { opacity: 1; }
 
 .cloud-section { padding: 0 0 116px; background: var(--soft); }
@@ -555,7 +586,13 @@ button {
 .cloud-copy .button { align-self: flex-start; }
 
 .split-heading { display: flex; max-width: none; align-items: end; justify-content: space-between; margin-bottom: 67px; }
-.split-heading > p { max-width: 390px; margin: 0 0 7px; }
+.split-heading > p {
+  max-width: 390px;
+  margin: 0 0 7px;
+  color: #444851;
+  font-weight: 540;
+  line-height: 1.7;
+}
 .workflow-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-bottom: 62px; border-top: 1px solid var(--line); }
 .workflow-step { position: relative; padding: 33px 28px 0 0; border-right: 1px solid var(--line); }
 .workflow-step:not(:first-child) { padding-left: 28px; }
@@ -591,7 +628,7 @@ button {
 .industry-panel { display: grid; min-height: 465px; grid-template-columns: 1fr 1fr; overflow: hidden; border: 1px solid #343740; border-radius: 12px; background: #1d1f25; }
 .industry-copy { padding: 58px 65px; }
 .industry-icon { display: grid; width: 58px; height: 58px; place-items: center; border-radius: 9px; color: var(--orange); background: rgba(255,107,26,.11); }
-.industry-copy h3 { max-width: 480px; margin: 25px 0 16px; font-size: 31px; line-height: 1.14; letter-spacing: -.035em; }
+.industry-copy h3 { max-width: 480px; margin: 25px 0 16px; font-size: 31px; line-height: 1.16; letter-spacing: -.022em; }
 .industry-copy > p { max-width: 520px; margin: 0; color: #aeb1b8; font-size: 14px; line-height: 1.65; }
 .industry-copy ul { display: grid; gap: 10px; margin: 23px 0 29px; padding: 0; list-style: none; }
 .industry-copy li { display: flex; align-items: center; gap: 8px; color: #d5d7db; font-size: 12px; }
@@ -610,7 +647,7 @@ button {
 .photo-tour { position: relative; display: flex; min-height: 560px; align-items: center; overflow: hidden; color: #fff; background-image: linear-gradient(90deg, rgba(15,17,21,.94) 0%, rgba(15,17,21,.8) 38%, rgba(15,17,21,.18) 72%, rgba(15,17,21,.12) 100%), url("/images/wfm-workspace.jpg"); background-position: center; background-size: cover; }
 .photo-tour::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(15,17,21,.35)); content: ""; }
 .photo-tour-inner { position: relative; z-index: 2; }
-.photo-tour h2 { max-width: 670px; margin: 19px 0 19px; font-size: clamp(40px, 4.5vw, 59px); line-height: 1.05; letter-spacing: -.052em; }
+.photo-tour h2 { max-width: 670px; margin: 19px 0 19px; font-size: clamp(40px, 4.5vw, 59px); line-height: 1.08; letter-spacing: -.035em; }
 .photo-tour p { max-width: 520px; margin: 0 0 30px; color: rgba(255,255,255,.75); font-size: 16px; line-height: 1.65; }
 
 .results { background: #fff; }

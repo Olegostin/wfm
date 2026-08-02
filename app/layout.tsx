@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
+import "@fontsource-variable/roboto";
 import "./globals.css";
 
 export const metadata: Metadata = {
