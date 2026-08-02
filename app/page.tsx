@@ -468,7 +468,7 @@ export default function Home() {
             <div className="success-card"><span><Check size={34} /></span><h3>Заявка принята</h3><p>Спасибо! Это демонстрационная форма интерфейса. Подключите её к вашей CRM или почтовому сервису перед запуском.</p><button className="button button-white" onClick={() => setSent(false)}>Отправить ещё</button></div>
           ) : (
             <form className="demo-form" onSubmit={submitDemo}>
-              <label><span>Ваше имя</span><input name="name" placeholder="Алексей" required /></label>
+              <label><span>Ваше имя</span><input name="name" placeholder="Имя" required /></label>
               <label><span>Рабочая почта</span><input name="email" type="email" placeholder="name@company.ru" required /></label>
               <label><span>Телефон</span><input name="phone" type="tel" placeholder="+7 900 000-00-00" required /></label>
               <label><span>Компания</span><input name="company" placeholder="Название компании" required /></label>
