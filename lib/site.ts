@@ -1,15 +1,16 @@
 export const siteConfig = {
   brand: {
-    name: "WFM",
-    descriptor: "workforce intelligence",
-    accent: "#ff6b1a",
+    name: "Naumen WFM",
+    descriptor: "Workforce Management",
+    accent: "#ff671d",
   },
   contact: {
-    email: "hello@wfm.team",
+    email: "wfm-team@naumen.ru",
+    phone: "+7 (495) 120-90-45",
   },
   meta: {
-    title: "WFM — управление рабочей нагрузкой",
+    title: "Naumen WFM — управление рабочей нагрузкой",
     description:
-      "Платформа прогнозирования нагрузки, планирования смен и управления эффективностью команды.",
+      "Naumen WFM — платформа прогнозирования нагрузки, планирования смен и управления эффективностью команды.",
   },
 } as const;

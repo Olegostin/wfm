@@ -29,6 +29,7 @@ import {
   Zap,
 } from "lucide-react";
 import { FormEvent, useState } from "react";
+import Image from "next/image";
 import { siteConfig } from "@/lib/site";
 
 const features = [
@@ -60,7 +61,7 @@ const features = [
   {
     icon: Network,
     title: "Готовность к интеграциям",
-    text: "Соединяйте WFM с ERP, HCM, BI, телефонией и другими системами компании.",
+    text: "Соединяйте Naumen WFM с ERP, HCM, BI, телефонией и другими системами компании.",
   },
 ];
 
@@ -154,11 +155,11 @@ const pricingPlans = [
 function Dashboard() {
   const bars = [46, 62, 54, 77, 71, 88, 64, 79, 68, 84, 73, 91, 76, 86];
   return (
-    <div className="dashboard-wrap" aria-label="Интерфейс платформы WFM">
+    <div className="dashboard-wrap" aria-label="Интерфейс платформы Naumen WFM">
       <div className="dashboard-glow" />
       <div className="dashboard">
         <div className="dash-top">
-          <div className="dash-logo"><span>W</span></div>
+          <div className="dash-logo"><span>N</span></div>
           <div className="dash-search">Поиск по системе</div>
           <div className="dash-user"><span>АН</span></div>
         </div>
@@ -199,9 +200,9 @@ function Dashboard() {
 
 function Logo() {
   return (
-    <a className="logo" href="#top" aria-label="WFM — на главную">
-      <span className="logo-mark"><i /><i /><i /></span>
-      <span className="logo-text">{siteConfig.brand.name}<small>{siteConfig.brand.descriptor}</small></span>
+    <a className="logo" href="#top" aria-label="Naumen WFM — на главную">
+      <Image className="naumen-logo" src="/images/naumen-logo.svg" alt="NAUMEN" width={162} height={50} priority />
+      <span className="logo-product">WFM</span>
     </a>
   );
 }
@@ -243,9 +244,9 @@ export default function Home() {
         <div className="hero-orb hero-orb-two" />
         <div className="container hero-inner">
           <div className="hero-copy">
-            <div className="eyebrow"><span><Sparkles size={13} /></span> ПЛАНИРОВАНИЕ НОВОГО ПОКОЛЕНИЯ</div>
-            <h1>Точная нагрузка.<br /><em>Сильная команда.</em></h1>
-            <p>Прогнозируйте потребность в персонале, собирайте оптимальные графики и управляйте эффективностью — в одной WFM-платформе.</p>
+            <div className="eyebrow"><span><Sparkles size={13} /></span> NAUMEN WORKFORCE MANAGEMENT</div>
+            <h1>Эффективное планирование.<br /><em>Оптимальные затраты.</em></h1>
+            <p>Naumen WFM прогнозирует потребность в персонале, строит оптимальные графики и помогает управлять эффективностью команды в единой платформе.</p>
             <div className="hero-actions">
               <a href="#demo" className="button button-orange">Запросить демо <ArrowRight size={18} /></a>
               <a href="#features" className="text-button"><span><Play size={14} fill="currentColor" /></span> Смотреть возможности</a>
@@ -272,7 +273,7 @@ export default function Home() {
             <h2>Правильные люди<br />в правильное время</h2>
           </div>
           <div className="intro-copy">
-            <p>WFM превращает исторические данные в точный прогноз, а прогноз — в рабочий график, который учитывает цели бизнеса и потребности команды.</p>
+            <p>Naumen WFM превращает исторические данные в точный прогноз, а прогноз — в рабочий график, который учитывает цели бизнеса и потребности команды.</p>
             <a href="#features">Как работает платформа <ArrowRight size={17} /></a>
           </div>
         </div>
@@ -307,7 +308,7 @@ export default function Home() {
             <Cloud size={92} strokeWidth={1.15} />
           </div>
           <div className="cloud-copy">
-            <div className="section-kicker light">WFM CLOUD</div>
+            <div className="section-kicker light">NAUMEN WFM CLOUD</div>
             <h2>Запустите планирование без сложной инфраструктуры</h2>
             <p>Готовое облачное решение для быстрого старта: безопасный доступ, регулярные обновления и масштабирование по мере роста.</p>
             <div className="cloud-points"><span><Check /> Быстрый старт</span><span><Check /> Пилотный период</span><span><Check /> Поддержка команды</span></div>
@@ -388,7 +389,7 @@ export default function Home() {
         <div className="container results-grid">
           <div className="results-copy">
             <div className="section-kicker">ИЗМЕРИМЫЙ ЭФФЕКТ</div>
-            <h2>Результат виден в цифрах</h2>
+            <h2>Эффекты внедрения Naumen WFM</h2>
             <p>Встроенная аналитика показывает, как качество планирования влияет на расходы, сервис и загрузку команды.</p>
             <div className="quote-card"><div className="quote-image" role="img" aria-label="Сотрудники службы поддержки" /><div className="quote-content"><Quote size={24} /><blockquote>«Расписание, которое раньше занимало несколько часов, теперь готово за минуты. Команда сразу видит изменения, а руководитель — актуальную картину по нагрузке».</blockquote><span>Типовой сценарий службы поддержки</span></div></div>
           </div>
@@ -463,13 +464,14 @@ export default function Home() {
 
       <section className="demo-section" id="demo">
         <div className="container demo-card">
-          <div className="demo-copy"><div className="section-kicker light">ПЕРСОНАЛЬНАЯ ДЕМОНСТРАЦИЯ</div><h2>Посмотрите, как WFM решит ваши задачи</h2><p>Покажем продукт на сценариях вашей отрасли и рассчитаем потенциальный эффект.</p><div className="demo-benefits"><span><Check /> 30 минут с экспертом</span><span><Check /> Без обязательств</span><span><Check /> План пилотного запуска</span></div></div>
+          <div className="demo-copy"><div className="section-kicker light">ПЕРСОНАЛЬНАЯ ДЕМОНСТРАЦИЯ</div><h2>Посмотрите, как Naumen WFM решит ваши задачи</h2><p>Покажем продукт на сценариях вашей отрасли и рассчитаем потенциальный эффект.</p><div className="demo-benefits"><span><Check /> 30 минут с экспертом</span><span><Check /> Без обязательств</span><span><Check /> План пилотного запуска</span></div></div>
           {sent ? (
             <div className="success-card"><span><Check size={34} /></span><h3>Заявка принята</h3><p>Спасибо! Это демонстрационная форма интерфейса. Подключите её к вашей CRM или почтовому сервису перед запуском.</p><button className="button button-white" onClick={() => setSent(false)}>Отправить ещё</button></div>
           ) : (
             <form className="demo-form" onSubmit={submitDemo}>
               <label><span>Ваше имя</span><input name="name" placeholder="Имя" required /></label>
-              <label><span>Рабочая почта</span><input name="email" type="email" placeholder="name@company.ru" required /></label>
+              <label><span>Email для связи</span><input name="email" type="email" placeholder="name@company.ru" required /></label>
+              <label><span>Telegram</span><input name="telegram" placeholder="@username" autoComplete="off" /></label>
               <label><span>Телефон</span><input name="phone" type="tel" placeholder="+7 900 000-00-00" required /></label>
               <label><span>Компания</span><input name="company" placeholder="Название компании" required /></label>
               <button className="button button-orange" type="submit">Запросить демонстрацию <ArrowRight size={17} /></button>
@@ -481,12 +483,12 @@ export default function Home() {
 
       <footer>
         <div className="container footer-top">
-          <div className="footer-brand"><Logo /><p>Интеллектуальное управление рабочей нагрузкой и расписаниями.</p></div>
+          <div className="footer-brand"><Logo /><p>Приближаем цифровое будущее. Naumen WFM управляет рабочей нагрузкой и расписаниями.</p></div>
           <div><b>Продукт</b><a href="#features">Возможности</a><a href="#industries">Для отраслей</a><a href="#results">Эффекты</a></div>
-          <div><b>Ресурсы</b><a href="#faq">FAQ</a><a href="#demo">Демонстрация</a><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></div>
+          <div><b>Контакты</b><a href="#demo">Демонстрация</a><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a><a href="tel:+74951209045">{siteConfig.contact.phone}</a></div>
           <div className="footer-cta"><b>Готовы начать?</b><p>Обсудим ваш сценарий планирования.</p><a className="button button-orange" href="#demo">Связаться с нами <ArrowRight size={16} /></a></div>
         </div>
-        <div className="container footer-bottom"><span>© {new Date().getFullYear()} {siteConfig.brand.name}. Все права защищены.</span><div><a href="#">Политика конфиденциальности</a><a href="#">Документы</a></div></div>
+        <div className="container footer-bottom"><span>© {new Date().getFullYear()} NAUMEN. Все права защищены.</span><div><a href="https://www.naumen.ru/upload/agree/Politika_konfidencialnosti_v_otnoshenii_obrabotki_pers_dannyx.pdf" target="_blank" rel="noreferrer">Политика конфиденциальности</a><a href="https://www.naumen.ru/" target="_blank" rel="noreferrer">naumen.ru</a></div></div>
       </footer>
     </main>
   );

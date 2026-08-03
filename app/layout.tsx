@@ -6,9 +6,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: siteConfig.meta.title,
   description: siteConfig.meta.description,
-  keywords: ["WFM", "workforce management", "планирование персонала", "рабочие графики"],
+  keywords: ["Naumen WFM", "workforce management", "планирование персонала", "рабочие графики"],
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
-    title: `${siteConfig.brand.name} — точное планирование команды`,
+    title: `${siteConfig.brand.name} — эффективное планирование персонала`,
     description: "Прогнозируйте нагрузку и собирайте оптимальные графики за минуты.",
     type: "website",
     locale: "ru_RU",

@@ -1,5 +1,5 @@
 :root {
-  --orange: #ff6b1a;
+  --orange: #ff671d;
   --orange-bright: #ff7a2f;
   --ink: #17191f;
   --muted: #666b76;
@@ -36,7 +36,7 @@ input {
 h1,
 h2,
 h3,
-.logo-text,
+.logo-product,
 .button,
 .proof-grid strong,
 .industry-stat strong,
@@ -86,50 +86,26 @@ button {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
+  gap: 12px;
   min-width: 224px;
 }
 
-.logo-mark {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 2px;
-  width: 36px;
-  height: 36px;
-  padding: 8px;
-  border-radius: 10px;
-  background: var(--orange);
-  transform: rotate(-3deg);
+.naumen-logo {
+  width: 140px;
+  height: auto;
 }
 
-.logo-mark i {
-  display: block;
-  width: 4px;
-  border-radius: 4px;
-  background: #fff;
-}
-
-.logo-mark i:nth-child(1) { height: 10px; }
-.logo-mark i:nth-child(2) { height: 20px; }
-.logo-mark i:nth-child(3) { height: 15px; }
-
-.logo-text {
-  font-size: 22px;
+.logo-product {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding-left: 12px;
+  border-left: 1px solid #d9dade;
+  color: #34373e;
+  font-size: 15px;
   font-weight: 800;
-  line-height: 0.85;
-  letter-spacing: -0.04em;
-}
-
-.logo-text small {
-  display: block;
-  margin-top: 7px;
-  color: #868a93;
-  font-size: 8px;
-  font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: .04em;
 }
 
 .nav-links {
@@ -761,6 +737,7 @@ button {
 
 footer { padding: 67px 0 25px; color: #fff; background: #111318; }
 footer .logo { color: #fff; }
+footer .logo-product { border-color: #3b3e46; color: #fff; }
 .footer-top { display: grid; grid-template-columns: 1.4fr .7fr .7fr 1.1fr; gap: 50px; padding-bottom: 55px; }
 .footer-brand > p { max-width: 245px; margin: 20px 0 0; color: #777b84; font-size: 12px; line-height: 1.6; }
 .footer-top > div:not(:first-child) { display: flex; flex-direction: column; align-items: flex-start; gap: 13px; }
@@ -831,8 +808,8 @@ footer .logo { color: #fff; }
   .site-header { height: 68px; }
   .nav-links { top: 68px; }
   .logo { min-width: auto; }
-  .logo-text small { display: none; }
-  .logo-mark { width: 33px; height: 33px; }
+  .naumen-logo { width: 112px; }
+  .logo-product { min-height: 24px; padding-left: 9px; font-size: 13px; }
   .header-cta { display: none; }
   .section-pad { padding: 72px 0; }
   .hero-inner { padding: 69px 0 80px; }
